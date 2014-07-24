@@ -2,4 +2,9 @@
 	<h1>Home Page</h1>
 	
 	<p>{{ message }}</p>
+
+	<p ng-repeat="nomes in teste"><input type="text" ng-value="nomes.nome" value="{{nomes.nome}}" ng-model="nomes.nome" /></p>
+
+	<p ng-repeat="nomes in teste">{{ nomes.nome }}</p>
+
 </div>

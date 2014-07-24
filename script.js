@@ -25,6 +25,11 @@ scotchApp.config(function($routeProvider, $locationProvider) {
 			controller  : 'contactController',
 			title: 'Get in touch'
 		})
+		.when('/contact/:2', {
+			templateUrl : 'pages/contact2.html',
+			controller  : 'contactController',
+			title: 'Get in touch'
+		})
 
 		// route for the contact page
 		.when('/404', {
@@ -36,7 +41,6 @@ scotchApp.config(function($routeProvider, $locationProvider) {
 			redirectTo: '/404'
 		});
 	$locationProvider.html5Mode(true)
-	
 });
 
 scotchApp.run(['$location', '$rootScope', function($location, $rootScope) {
@@ -46,9 +50,17 @@ scotchApp.run(['$location', '$rootScope', function($location, $rootScope) {
 }]);
 
 // create the controller and inject Angular's $scope
-scotchApp.controller('mainController', function($scope) {
+scotchApp.controller('mainController', function($scope, $http) {
 	// create a message to display in our view
 	$scope.message = 'Everyone come and see how good I look!';
+	$scope.teste = [
+		{
+			nome: 'Marcelo'
+		}
+		, {
+			nome: 'Xandão'
+		}
+	];
 });
 
 scotchApp.controller('aboutController', function($scope) {
